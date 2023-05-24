@@ -1,11 +1,14 @@
-addBoxes(100);
+document.querySelector(".boxAmount").addEventListener("click", function() {
+    let numberOfBoxes = prompt("Enter number of boxes per side");
+    addBoxes(numberOfBoxes);
+    const boxes = document.querySelectorAll(".box");
+    boxes.forEach(box => box.addEventListener("mouseover", changeBoxColor));
+});
 const chosenColor = "blue";
-
-const boxes = document.querySelectorAll(".box");
-boxes.forEach(box => box.addEventListener("mouseover", changeBoxColor));
 
 function addBoxes(numberOfBoxesPerSide) {
     const container = document.getElementById("container");
+    container.replaceChildren();
 
     const width = container.clientWidth / numberOfBoxesPerSide;
     const height = container.clientHeight / numberOfBoxesPerSide;
