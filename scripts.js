@@ -1,5 +1,9 @@
 document.querySelector(".boxAmount").addEventListener("click", function() {
     let numberOfBoxes = prompt("Enter number of boxes per side");
+
+    if(numberOfBoxes > 100) numberOfBoxes = 100;
+    if(numberOfBoxes < 1) numberOfBoxes = 1;
+
     addBoxes(numberOfBoxes);
     const boxes = document.querySelectorAll(".box");
     boxes.forEach(box => box.addEventListener("mouseover", changeBoxColor));
