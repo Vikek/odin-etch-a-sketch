@@ -1,3 +1,5 @@
+let chosenColor = "black";
+
 document.querySelector(".boxAmount").addEventListener("click", function() {
     let numberOfBoxes = prompt("Enter number of boxes per side");
 
@@ -8,7 +10,10 @@ document.querySelector(".boxAmount").addEventListener("click", function() {
     const boxes = document.querySelectorAll(".box");
     boxes.forEach(box => box.addEventListener("mouseover", changeBoxColor));
 });
-const chosenColor = "blue";
+
+document.getElementById("color-picker").addEventListener("input", function() {
+    chosenColor = this.value;
+});
 
 function addBoxes(numberOfBoxesPerSide) {
     const container = document.getElementById("container");
